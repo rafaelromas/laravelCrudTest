@@ -20,6 +20,8 @@ Route::get("/posts/read", [PostController::class, 'read']);
 
 Route::get("/posts/readAll", [PostController::class, 'readAll']);
 
+Route::get("/posts/update", [PostController::class, 'update']);
+
 Route::get("/returnPayment", [PostController::class, 'returnPayment']);
 
 Route::get('/', function () {

@@ -45,6 +45,17 @@ class PostController extends Controller
 
     }
 
+    public function update(Request $r)
+    {
+        $post = Post::where('id', "=", 2)->update([
+            'title' => "Meu Título Atualizadaço",
+            'author' => "Romanescal"
+        ]);
+
+        return $post;
+        
+    }
+
     public function returnPayment(Request $r)
     {
 
