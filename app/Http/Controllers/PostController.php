@@ -84,7 +84,8 @@ class PostController extends Controller
 
         $post = Post::find(1);
 
-        //$post = Post::where("id", ">", 0)->delete(); funciona também
+        //## dessa forma funciona também
+        // $post = Post::where("id", ">", 0)->delete();
 
 
         return $post->delete(1);
