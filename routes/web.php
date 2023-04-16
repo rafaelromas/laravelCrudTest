@@ -24,6 +24,9 @@ Route::get("/posts/update", [PostController::class, 'update']);
 
 Route::get("/returnPayment", [PostController::class, 'returnPayment']);
 
+Route::get("/delete", [PostController::class, 'delete']);
+
+
 Route::get('/', function () {
     return view('welcome');
 });
