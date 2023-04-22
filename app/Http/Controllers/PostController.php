@@ -2,93 +2,64 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Payment;
-use App\Models\Post;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    //
-
-    public function create(Request $request)
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
     {
-        $new_post = [
-            'title' => 'Meu Primeiro Post',
-            'content' => 'Conteúdo Qualquer',
-            'author' => 'Roma'
-        ];
-
-        $post = new Post($new_post);
-        $post->save();
-
-        dd($post);
-
+        //
     }
 
-    public function read(Request $request)
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
     {
-        $post = new Post();
-
-        $post = $post->find(2);
-
-        // dd($post);
-
-        return $post;
-
+        //
     }
 
-    public function readAll(Request $request)
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
     {
-        $post = Post::all();
-
-        return $post;
-
+        //
     }
 
-    public function update(Request $r)
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
     {
-        $post = Post::where('id', "=", 2)->update([
-            'title' => "Meu Título Atualizadaço",
-            'author' => "Romanescal"
-        ]);
-
-        return $post;
-        
+        //
     }
 
-    public function returnPayment(Request $r)
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
     {
-
-        $payment = new Payment();
-        $payment->setCreditCard("12345...");
-        $payment->setFlag("CA");
-        $payment->setInstallment("10");
-
-        $data = [
-            "payment" => [
-                "creditCard" => $payment->getCreditCard(),
-                "flag" => $payment->getFlag(),
-                "installment" => $payment->getInstallment()
-            ],
-            "company" => "JJ",
-            "command" => "fmpccaa..."
-        ];
- 
-
-        return $data;
+        //
     }
 
-
-    public function delete(Request $r)
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
     {
-
-        $post = Post::find(1);
-
-        //## dessa forma funciona também
-        // $post = Post::where("id", ">", 0)->delete();
-
-
-        return $post->delete(1);
+        //
     }
 
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        //
+    }
 }
